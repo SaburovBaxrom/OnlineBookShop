@@ -14,5 +14,6 @@ public class BookShopDbContext : DbContext
 	public DbSet<Book> Books { get; set; }
 	public DbSet<BookRating> Rating { get; set; }
 	public DbSet<Category> Categories { get; set; }
+	public DbSet<ShoppingCart> ShoppingCarts { get; set;}
 
 }

@@ -14,6 +14,8 @@ namespace OnlineBookShopWebApi.Mapping
 			CreateMap<Book, BookDto>().ReverseMap();
 			CreateMap<CreatationCategory, Category>().ReverseMap();
 			CreateMap<Category, CategoryDto>().ReverseMap();
+			CreateMap<ShoppingCartCreatationDto, ShoppingCart>().ReverseMap();	
+			CreateMap<ShoppingCart, ShoppingCartDto>().ReverseMap();
 		}
 	}
 }
