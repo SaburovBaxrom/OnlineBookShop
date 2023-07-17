@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineBookShopWebApi.Models.Dto;
 using OnlineBookShopWebApi.Repository;
@@ -7,6 +8,7 @@ namespace OnlineBookShopWebApi.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
+	[Authorize]
 	public class ShoppingCartController : ControllerBase
 	{
 		private readonly IShoppingCartRepository _shoppingCartRepository;

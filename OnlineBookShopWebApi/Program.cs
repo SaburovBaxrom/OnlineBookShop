@@ -61,6 +61,7 @@ builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ITokenRepository,TokenRepository>();	
 builder.Services.AddScoped<IShoppingCartRepository,ShoppingCartRepository>();	
+builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
