@@ -16,7 +16,8 @@
 			<tbody>
 			@foreach (var item in Model.OrderItems)
 			{
-			var itemTotal = (item.Book.Price - (item.Book.Price * item.Book.Discount / 100)) * item.Quantity;
+			var itemTotal = item.Book.Price * item.Quantity;
+			var itemTotalOverAll = (item.Book.Price - (item.Book.Price * item.Book.Discount / 100)) * item.Quantity;
 						<tr>
 							<td>
 								<a class="a-cleanup" asp-controller="Store" asp-action="Details" asp-route-id="@item.Id"><img src="@item.Book.ImageUrl" style="height: 4em"> </a>
@@ -25,7 +26,7 @@
 								<a class="a-cleanup" asp-controller="Store" asp-action="Details" asp-route-id="@item.Id">@item.Book.Name</a>
 							</td>
 							<td>
-						@itemTotal.ToString("c");
+								@itemTotal.ToString()  | @itemTotalOverAll.ToString();
 							</td>
 							<td>
 								@item.Quantity

@@ -10,7 +10,7 @@
 				<th></th>
 				<th>Book</th>
 				<th>Discount</th>
-				<th>Price</th>
+				<th>Price  | Over all price</th>
 				<th>Quantity</th>
 				<th>Remove</th>
 			</tr>
@@ -31,7 +31,7 @@
 						@item.Book.Discount %
 					</td>
 					<td>
-						@bookTotalPrice | @bookTotalPriceDiscount.ToString("c");
+						@bookTotalPrice.ToString() | @bookTotalPriceDiscount.ToString();
 					</td>
 					<td>
 						<a asp-controller="Cart" asp-action="ReduceQuantity" asp-route-id="@item.Book.Id"><i class="fa-solid fa-minus"></i></a>
