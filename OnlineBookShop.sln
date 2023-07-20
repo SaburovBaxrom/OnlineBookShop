@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineBookShopWebApi", "OnlineBookShopWebApi\OnlineBookShopWebApi.csproj", "{337765CD-A155-4C9A-93A7-FC790D1216B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBookShopWebApi", "OnlineBookShopWebApi\OnlineBookShopWebApi.csproj", "{337765CD-A155-4C9A-93A7-FC790D1216B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineBookShopMvc", "OnlineBookShopMvc\OnlineBookShopMvc.csproj", "{D3DBD04B-593C-45D3-8D0E-C33AF955E507}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{337765CD-A155-4C9A-93A7-FC790D1216B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{337765CD-A155-4C9A-93A7-FC790D1216B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{337765CD-A155-4C9A-93A7-FC790D1216B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3DBD04B-593C-45D3-8D0E-C33AF955E507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3DBD04B-593C-45D3-8D0E-C33AF955E507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3DBD04B-593C-45D3-8D0E-C33AF955E507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3DBD04B-593C-45D3-8D0E-C33AF955E507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

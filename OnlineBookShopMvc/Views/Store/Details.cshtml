@@ -1,0 +1,74 @@
+﻿@model OnlineBookShopMvc.Models.Book;
+
+@{
+	ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="row">
+	<div class="col-5">
+		<div>
+            <h4>Book</h4>
+            <hr />
+            <dl class="row">
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Language)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Language)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Rating)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Rating)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.ImageUrl)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.ImageUrl)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Discount)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Discount)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Category.Name)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Author)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Author.FirstName)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Index" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i>Back</a>
+            <a asp-controller = "Cart" asp-action="AddToCart" asp-route-id="@Model?.Id" class="btn btn-primary store-btn float-sm-end mr-5"><i class="fa-solid fa-cart-plus"></i> Add to cart</a> 
+        </div>
+	</div>
+    <div class="col-4">
+        <img src="@Model.ImageUrl" class="w-100" />
+
+    </div>
+</div>
