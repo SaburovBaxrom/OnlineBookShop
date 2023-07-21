@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OnlineBookShopMvc.Data;
 using OnlineBookShopMvc.Models;
 
 namespace OnlineBookShopMvc.Controllers;
 
+[Authorize]
 public class OrderController : Controller
 {
 	private readonly BookShopDbContext _context;

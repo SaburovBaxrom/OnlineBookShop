@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineBookShopMvc.Data;
 
 namespace OnlineBookShopMvc.Controllers
 {
+    [Authorize]
     public class StoreController : Controller
     {
         private readonly BookShopDbContext _context;
@@ -11,11 +13,27 @@ namespace OnlineBookShopMvc.Controllers
         {
             _context = context;
         }
-
-        public async Task<IActionResult> Index()
+        [AllowAnonymous]
+        public async Task<IActionResult> Index(string searchString, string minPrice, string maxPrice)
         {
-            var bookShopDbContext = _context.Books.Include(b => b.Author).Include(b => b.Category);
-            return View(await bookShopDbContext.ToListAsync());
+            var books = _context.Books.Include(b => b.Author).Include(b => b.Category).AsQueryable();
+            if(!string.IsNullOrEmpty(searchString) ) 
+            {
+                books = books.Where(b => b.Name.Contains(searchString) || b.Author.FirstName.Contains(searchString));
+            }
+            if (!string.IsNullOrEmpty(minPrice))
+            {
+                var min = int.Parse(minPrice);
+
+                books = books.Where(b => b.Price >= min);
+            }
+            if (!string.IsNullOrEmpty(maxPrice))
+            {
+                var max = int.Parse(maxPrice);
+
+                books = books.Where(b => b.Price <= max);
+            }
+            return View(await books.ToListAsync());
         }
         public async Task<IActionResult> Details(Guid? id)
         {

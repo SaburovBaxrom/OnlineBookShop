@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using OnlineBookShopMvc.Data;
 using OnlineBookShopMvc.Models;
 using System.Reflection.Metadata;
 
 namespace OnlineBookShopMvc.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
         private readonly Cart _cart;
